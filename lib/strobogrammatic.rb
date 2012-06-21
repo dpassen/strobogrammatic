@@ -1,15 +1,22 @@
 module Strobogrammatic
-    def strobogrammatic?
-        unless (to_s =~ /[-23457]/).nil? && to_s.count("6") == to_s.count("9")
-            false
-        else
-            sixes = (0 .. to_s.length - 1).find_all { |i| to_s[i,1] == '6' }
-            nines = (0 .. to_s.length - 1).find_all { |i| to_s[i,1] == '9' }
-            sixes.zip(nines.reverse).collect { |i,j| i + j }.all? { |n| n == (to_s.length - 1) }
-        end
+    @strobogrammatic_pairs = {
+        "0" => "0",
+        "1" => "1",
+        "6" => "9",
+        "8" => "8",
+        "9" => "6"
+    }
+
+    def self.strobogrammatic_pair?(a, b)
+        @strobogrammatic_pairs[a] == b
     end
 end
 
 class Fixnum 
-    include Strobogrammatic
+    def strobogrammatic?
+        midpoint = (to_s.length / 2.0).ceil
+        to_s[0...midpoint].split(//).each_with_index.map do |char, index|
+            Strobogrammatic::strobogrammatic_pair?(char, to_s.reverse[index])
+        end.all? { |b| b == true } 
+    end
 end
