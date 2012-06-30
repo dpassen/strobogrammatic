@@ -8,7 +8,7 @@ module Strobogrammatic
     }
 
     def self.strobogrammatic_pair?(a, b)
-        @strobogrammatic_pairs[a] == b
+        !a.nil? && !b.nil? && @strobogrammatic_pairs[a] == b
     end
 end
 
