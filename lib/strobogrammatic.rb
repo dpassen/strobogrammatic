@@ -12,11 +12,11 @@ module Strobogrammatic
     end
 end
 
-class Fixnum 
+class Fixnum
     def strobogrammatic?
         midpoint = (to_s.length / 2.0).ceil
         to_s[0...midpoint].split(//).each_with_index.map do |char, index|
-            Strobogrammatic::strobogrammatic_pair?(char, to_s.reverse[index])
+            Strobogrammatic::strobogrammatic_pair?(char, to_s.reverse[index,1])
         end.all?
     end
 end
