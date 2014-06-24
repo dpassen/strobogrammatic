@@ -6,7 +6,7 @@ class TestStrobogrammatic < Test::Unit::TestCase
         assert_equal(false, condition)
     end
 
-    def test_that_nil_cannot_be_strobogrammtic
+    def test_that_nil_cannot_be_strobogrammatic
         assert_false(Strobogrammatic::strobogrammatic_pair?(nil, nil))
         assert_false(Strobogrammatic::strobogrammatic_pair?('2', nil))
         assert_false(Strobogrammatic::strobogrammatic_pair?(nil, '4'))
