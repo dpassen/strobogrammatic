@@ -1,8 +1,6 @@
 require 'rake/testtask'
 
-Rake::TestTask.new do |t|
-    t.libs << 'test'
-end
+Rake::TestTask.new { |t| t.libs << 'test' }
 
-desc "Run tests"
-task :default => :test
+desc 'Run tests'
+task default: :test
