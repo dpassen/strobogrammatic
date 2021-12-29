@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.authors = ['Derek Passen']
   s.email = 'dpassen1@gmail.com'
   s.files = ['lib/strobogrammatic.rb']
-  s.homepage = 'https://github.com/dpassen1/strobogrammatic'
+  s.homepage = 'https://github.com/dpassen/strobogrammatic'
 end
