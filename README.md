@@ -1,5 +1,4 @@
-strobogrammatic
-===============
+# strobogrammatic
 
 [![Gem Version](https://badge.fury.io/rb/strobogrammatic.svg)](https://badge.fury.io/rb/strobogrammatic)
 
