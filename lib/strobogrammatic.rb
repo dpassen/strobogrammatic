@@ -1,3 +1,4 @@
+# Figure out if a number is strobogrammatic
 module Strobogrammatic
   @strobogrammatic_pairs = {
     '0' => '0',
@@ -7,11 +8,12 @@ module Strobogrammatic
     '9' => '6'
   }
 
-  def self.strobogrammatic_pair?(a, b)
-    !a.nil? && !b.nil? && @strobogrammatic_pairs[a] == b
+  def self.strobogrammatic_pair?(left, right)
+    !left.nil? && !right.nil? && @strobogrammatic_pairs[left] == right
   end
 end
 
+# Monkeypatch the existing Integer class
 class Integer
   def strobogrammatic?
     midpoint = (to_s.length / 2.0).ceil
